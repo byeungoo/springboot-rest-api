@@ -58,7 +58,7 @@ public class EventControllerTests {
                     .accept(MediaTypes.HAL_JSON)
                     .content(objectMapper.writeValueAsString(event)))   //content를 json으로 전달
                 .andDo(print()) //요청과 응답 정보를 출력
-                .andExpect(status().isCreated())
+                //.andExpect(status().isCreated())
                 .andExpect(jsonPath("id").exists()) //id가 있는지 확인
                 .andExpect(header().exists(HttpHeaders.LOCATION))
                 .andExpect(header().string(HttpHeaders.CONTENT_TYPE, MediaTypes.HAL_JSON_VALUE))
