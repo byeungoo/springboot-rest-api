@@ -14,17 +14,17 @@ import java.time.LocalDateTime;
 @Data
 public class EventDto {
 
-    @NotEmpty @NotBlank
+    @NotEmpty
     private String name;
-    @NotEmpty @NotBlank
+    @NotEmpty
     private String description;
-    @NotNull @NotBlank
+    @NotNull
     private LocalDateTime beginEnrollmentDateTime;
-    @NotNull @NotBlank
+    @NotNull
     private LocalDateTime closeEnrollmentDateTime;
-    @NotNull @NotBlank
+    @NotNull
     private LocalDateTime beginEventDateTime;
-    @NotNull @NotBlank
+    @NotNull
     private LocalDateTime endEventDateTime;
     private String location; // (optional) 이게 없으면 온라인 모임
     @Min(0)

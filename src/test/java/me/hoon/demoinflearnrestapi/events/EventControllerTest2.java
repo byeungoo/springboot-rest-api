@@ -59,7 +59,8 @@ public class EventControllerTest2 {
                 .andExpect(header().exists(HttpHeaders.LOCATION))
                 .andExpect(header().string(HttpHeaders.CONTENT_TYPE, MediaTypes.HAL_JSON_VALUE))
                 .andExpect(jsonPath("id").value(Matchers.not(100)))
-                .andExpect(jsonPath("free").value(Matchers.not(true)))
+                .andExpect(jsonPath("free").value(false))
+                .andExpect(jsonPath("offline").value(true))
                 .andExpect(jsonPath("eventStatus").value(EventStatus.DRAFT.name()))
         ;
     }
@@ -98,7 +99,6 @@ public class EventControllerTest2 {
     @Test
     @TestDescription("입력 값이 비어있는 경우에 에러가 발생하는 테스트")
     public void createEvent_Bad_Request_Empty_Input() throws Exception{
-        //VALID가 안먹음 ㅠㅠ
         EventDto eventDto = EventDto.builder().build();
         this.mockMvc.perform(post("/api/events")
                     .contentType(MediaType.APPLICATION_JSON)
