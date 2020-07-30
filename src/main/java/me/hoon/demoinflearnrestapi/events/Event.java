@@ -39,7 +39,7 @@ public class Event {
             this.free = false;
         }
 
-        if(this.location == null || this.location.isEmpty()){
+        if(this.location == null || this.location.trim().isEmpty()){
             this.offline = false;
         } else {
             this.offline = true;
