@@ -72,9 +72,9 @@ public class EventControllerTest2 {
                 .andExpect(jsonPath("free").value(false))
                 .andExpect(jsonPath("offline").value(true))
                 .andExpect(jsonPath("eventStatus").value(EventStatus.DRAFT.name()))
-                .andExpect(jsonPath("_links.self").exists())
-                .andExpect(jsonPath("_links.query-events").exists()) //이벤트 목록으로 가는 링크
-                .andExpect(jsonPath("_links.update-event").exists()) //업데이트 이벤트 링크
+                .andExpect(jsonPath("_links.self").exists())        //-> document에서 확인하므로 지워도 됨
+                .andExpect(jsonPath("_links.query-events").exists()) //이벤트 목록으로 가는 링크  -> document에서 확인하므로 지워도 됨
+                .andExpect(jsonPath("_links.update-event").exists()) //업데이트 이벤트 링크 -> document에서 확인하므로 지워도 됨
                 .andDo(document("create-event",     //문서의 이름 : create-event)
                         links(  //링크 정보 문서화
                                 linkWithRel("self").description("link to self"),
