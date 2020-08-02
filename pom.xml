@@ -47,8 +47,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
         <dependency>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <!-- <scope>test</scope> -->
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -126,7 +126,7 @@
                 <version>2.7</version>
                 <executions>
                     <execution>
-                        <id>copy-resources</id>
+                        <id>copy-resources</id>ㅔ
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>copy-resources</goal>
